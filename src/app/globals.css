@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+ background-color: rgb(58, 58, 58);
+ 
+}
+.cross {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
+}
+
+.circle {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.5);
+}
+@keyframes winnerAnimation {
+  0% { color: #ff0000; transform: scale(1); }
+  25% { color: #00ff00; transform: scale(1.1); }
+  50% { color: #0000ff; transform: scale(1); }
+  75% { color: #ff00ff; transform: scale(1.1); }
+  100% { color: #ffff00; transform: scale(1); }
+}
+
+@keyframes drawAnimation {
+  0% { color: #ff8800; transform: rotate(0deg); }
+  50% { color: #88ff00; transform: rotate(180deg); }
+  100% { color: #0088ff; transform: rotate(360deg); }
+}
+
+.winner-animation {
+  animation: winnerAnimation 2s infinite;
+}
+
+.draw-animation {
+  animation: drawAnimation 2s infinite;
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
